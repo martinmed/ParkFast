@@ -15,9 +15,9 @@ namespace Map_Test
     {
 
         private Map mapa = new Map();
-        
+
         private async void findMe()
-        {           
+        {
             var locator = CrossGeolocator.Current;
             Plugin.Geolocator.Abstractions.Position position = new Plugin.Geolocator.Abstractions.Position();
 
@@ -25,7 +25,7 @@ namespace Map_Test
             mapa.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude),
                                             Distance.FromMiles(1)));
         }
-        private async System.Threading.Tasks.Task requestGPSAsync()
+        private async void requestGPSAsync()
         {
             try
             {
@@ -53,7 +53,6 @@ namespace Map_Test
             }
             catch (Exception ex)
             {
-
                 
             }
         }
@@ -86,7 +85,5 @@ namespace Map_Test
                 }
             };
         }
-
-        
     }
 }
